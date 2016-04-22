@@ -56,11 +56,11 @@
  		shape.graphics.beginFill("#484b4b").drawRect(0, 0, 300, 250);
         stage.addChild(shape);
         createjs.Tween.get(shape, {loop: true})
-          .to({x: 400}, 1000, createjs.Ease.getPowInOut(4))
-          .to({alpha: 0, y: 75}, 500, createjs.Ease.getPowInOut(2))
-          .to({alpha: 0, y: 125}, 100)
-          .to({alpha: 1, y: 100}, 500, createjs.Ease.getPowInOut(2))
-          .to({x: 100}, 800, createjs.Ease.getPowInOut(2));
+          .to({x: 200}, 1500, createjs.Ease.getPowInOut(4));
         createjs.Ticker.setFPS(60);
+		var text = new createjs.Text("Hello World", "20px Arial", "#ff7700");
+ 		text.x = 100;
+ 		text.textBaseline = "alphabetic";
         createjs.Ticker.addEventListener("tick", stage);
+		createjs.Ticker.addEventListener("tick", text);
   })();
